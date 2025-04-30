@@ -5,15 +5,15 @@ const readline = require('readline-sync');
 
 const number = Number(readline.question("Digite um numero inteiro..\n"));
 
-function isNumber(number) {
-    return !isNaN(number);
+function isNumberInterger(number) {
+    return !isNaN(number) && Number.isInteger(number);
 }
 
 function isPar(number) {
     return number % 2 === 0;
 }
 
-if (isNumber(number)) {
+if (isNumberInterger(number)) {
     if (isPar(number)) {
         console.log(`O número ${number} é PAR.`);
     } else {
