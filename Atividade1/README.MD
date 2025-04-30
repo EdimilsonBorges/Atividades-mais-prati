@@ -50,7 +50,7 @@ function isPar(number) {
 ### 🔁 Condicional Principal
 
 ```js
-if (isNumber(number)) {
+if (isNumberInterger(number)) {
     if (isPar(number)) {
         console.log(`O número ${number} é PAR.`);
     } else {
@@ -61,7 +61,7 @@ if (isNumber(number)) {
 }
 ```
 
-- Primeiro verifica se a entrada é válida com `isNumber()`.
+- Primeiro verifica se a entrada é válida com `isNumberInterger()`.
 - Depois avalia a paridade com `isPar()` e exibe a resposta apropriada.
 - Caso o valor digitado não seja um número, exibe uma mensagem de erro.
 
