@@ -1,9 +1,9 @@
 //Implemente um programa que recebe uma nota de 0 a 10 e classifica como
 //"Aprovado", "Recuperação", ou "Reprovado" utilizando if-else if.
 
-const readline = require('readline-sync');
+const prompt = require('prompt-sync')();
 
-const nota = Number(readline.question("Digite a nota do aluno de 0 a 10:\n"));
+const nota = Number(prompt("Digite a nota do aluno de 0 a 10: "));
 
 function eNotaValida(nota){
     return !isNaN(nota) && nota >= 0 && nota <= 10;
