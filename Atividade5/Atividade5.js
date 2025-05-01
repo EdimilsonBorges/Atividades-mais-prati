@@ -18,7 +18,7 @@ const peso = Number(prompt("Digite seu peso em KG: "));
 const altura = Number(prompt("Digite sua altura em Metros: "));
 
 function eNumeroValido(numero){
-    return !isNaN(numero);
+    return !isNaN(numero) && numero > 0;
 }
 
 function calcularIMC(peso,altura){
