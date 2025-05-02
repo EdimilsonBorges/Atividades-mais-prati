@@ -20,20 +20,24 @@ function eNumerosValidos() {
     return (!isNaN(ladoA) && ladoA > 0) && (!isNaN(ladoB) && ladoB > 0) && (!isNaN(ladoC) && ladoC > 0);
 }
 
-if (!eNumerosValidos()) {
-    console.log("Os valores informados são inválidos");
-    return;
+function verificarTriangulo(ladoA, ladoB, ladoC){
+    if (!eNumerosValidos()) {
+        console.log("Os valores informados são inválidos");
+        return;
+    }
+    
+    if (!eTriangulo()) {
+        console.log("Os valores digitados não formam um triângulo");
+        return;
+    }
+    
+    if ((ladoA !== ladoB) && (ladoB !== ladoC)) {
+        console.log("Triângulo escaleno");
+    } else if ((ladoA === ladoB) && (ladoB === ladoC)) {
+        console.log("Triângulo eqüilátero");
+    } else if ((ladoA === ladoB) || (ladoA === ladoC) || (ladoB === ladoC)) {
+        console.log("Triângulo isósceles");
+    }
 }
 
-if (!eTriangulo()) {
-    console.log("Os valores digitados não formam um triângulo");
-    return;
-}
-
-if ((ladoA !== ladoB) && (ladoB !== ladoC)) {
-    console.log("Triângulo escaleno");
-} else if ((ladoA === ladoB) && (ladoB === ladoC)) {
-    console.log("Triângulo eqüilátero");
-} else if ((ladoA === ladoB) || (ladoA === ladoC) || (ladoB === ladoC)) {
-    console.log("Triângulo isósceles");
-}
+verificarTriangulo(ladoA, ladoB, ladoC);
