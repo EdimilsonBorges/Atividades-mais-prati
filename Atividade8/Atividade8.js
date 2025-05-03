@@ -3,15 +3,28 @@
 
 prompt = require('prompt-sync')();
 
-const valor1 = prompt("Digite o primeiro valor: ");
-const valor2 = prompt("Digite o sengundo valor: ");
+let valor1 = prompt("Digite o primeiro valor: ");
+let valor2 = prompt("Digite o sengundo valor: ");
 
-if (valor1 !== valor2) {
-    if (valor1 < valor2) {
-        console.log(`Ordem crescente: ${valor1}, ${valor2}`);
-    } else {
-        console.log(`Ordem crescente: ${valor2}, ${valor1}`);
-    }
-}else{
-    console.log("Os valores não podem ser iguais");
+function eNumero(valor1, valor2) {
+    return !isNaN(Number(valor1)) && !isNaN(Number(valor2));
 }
+
+function ordenarValor(valor1, valor2) {
+    if (valor1 !== valor2) {
+        if (valor1 < valor2) {
+            console.log(`Ordem crescente: ${valor1}, ${valor2}`);
+        } else {
+            console.log(`Ordem crescente: ${valor2}, ${valor1}`);
+        }
+    } else {
+        console.log("Os valores não podem ser iguais");
+    }
+}
+
+if (eNumero(valor1, valor2)) {
+    valor1 = Number(valor1);
+    valor2 = Number(valor2);
+}
+
+ordenarValor(valor1, valor2);
